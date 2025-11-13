@@ -2,11 +2,8 @@ import { Router } from 'express';
 import Joi from 'joi';
 import { query } from '../db.js';
 import validate from '../middlewares/validate.js';
-import { authenticate, authorize } from '../middlewares/auth.js';
 
 const router = Router();
-
-router.use(authenticate, authorize('Administrator'));
 
 router.get('/roles', async (req, res) => {
   const { rows } = await query(

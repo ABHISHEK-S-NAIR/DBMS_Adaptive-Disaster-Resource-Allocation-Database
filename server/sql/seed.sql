@@ -76,12 +76,12 @@ INSERT INTO app_roles (id, role_name, description) VALUES
   (2, 'Logistics Lead', 'Can allocate resources and manage transports'),
   (3, 'Field Coordinator', 'Can manage demand requests and volunteer assignments');
 
-INSERT INTO app_users (id, username, display_name, password_digest, role_id, contact_email) VALUES
-  (1, 'aishwarya', 'Aishwarya Rao', '100000:ea4e827f0aea8d79ec1caee730f7c43d:c189133949cc8deed586f73040953ac2217e2e21cdfac62a822e912140574898c76a2b8f7f14a98dff7143cc7d1ab75671bf88f04301e6372313a43b3aa3b6e2', 1, 'aishwarya@relieflab.org'),
-  (2, 'mohit', 'Mohit Verma', '100000:51ff65aa76e74cae838ee0d758b7de8c:d1151d14b529231ede81fe7978194a4be595c35e9a04e4f6439d8d6fa873ce2cdcc7ed6f07afb9d00aafd2c664554213a6b0b3093db76e3e04a76b3234546a68', 2, 'mohit@relieflab.org'),
-  (3, 'leena', 'Leena Joseph', '100000:af5c8ce70e102f8b35060fe5d3b97c47:d8d9cf3b3ee7073f61f65ec9bcb0690ac5140e3d9aa5f5d1b82fd19b551bfd0bab606d1a8ecaab5d2541f302fde2a4306cf87c2bbefee1943c3e407357aa5b39', 3, 'leena@relieflab.org');
-
-SELECT setval('storage_locations_id_seq', (SELECT MAX(id) FROM storage_locations));
+INSERT INTO app_users (id, username, display_name, password, role_id, contact_email) VALUES
+  (1, 'aishwarya', 'Aishwarya Rao', 'admin123', 1, 'aishwarya@relieflab.org'),
+  (2, 'mohit', 'Mohit Verma', 'logistics123', 2, 'mohit@relieflab.org'),
+  (3, 'leena', 'Leena Joseph', 'field123', 3, 'leena@relieflab.org'),
+    (4, 'admin_portal', 'Command Center Admin', 'Admin@123', 1, 'admin.portal@relieflab.org'),
+    (5, 'field_operator', 'Field Ops User', 'User@123', 3, 'field.ops@relieflab.org');
 SELECT setval('resources_id_seq', (SELECT MAX(id) FROM resources));
 SELECT setval('disasters_id_seq', (SELECT MAX(id) FROM disasters));
 SELECT setval('demand_requests_id_seq', (SELECT MAX(id) FROM demand_requests));

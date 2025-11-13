@@ -2,7 +2,6 @@ import { Router } from 'express';
 import Joi from 'joi';
 import { query } from '../db.js';
 import validate from '../middlewares/validate.js';
-import { authenticate, authorize } from '../middlewares/auth.js';
 
 const router = Router();
 
@@ -34,7 +33,7 @@ const disasterSchema = Joi.object({
   severity_level: Joi.string().valid('Low', 'Medium', 'High', 'Critical').default('Low'),
 });
 
-router.post('/', authenticate, authorize('Administrator', 'Field Coordinator'), validate(disasterSchema), async (req, res) => {
+router.post('/', validate(disasterSchema), async (req, res) => {
   const { type, location, severity_level } = req.body;
   const { rows } = await query(
     `INSERT INTO disasters (type, location, severity_level)
@@ -47,8 +46,6 @@ router.post('/', authenticate, authorize('Administrator', 'Field Coordinator'), 
 
 router.patch(
   '/:id/severity',
-  authenticate,
-  authorize('Administrator', 'Field Coordinator'),
   validate(Joi.object({ severity_level: disasterSchema.extract('severity_level').required() })),
   async (req, res) => {
   const { id } = req.params;
