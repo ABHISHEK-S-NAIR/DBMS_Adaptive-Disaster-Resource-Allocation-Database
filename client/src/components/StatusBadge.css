@@ -1,0 +1,51 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge--pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge--in-progress {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge--fulfilled,
+.badge--delivered,
+.badge--available {
+  background: #dcfce7;
+  color: #117a36;
+}
+
+.badge--cancelled,
+.badge--unavailable {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge--critical {
+  background: #fca5a5;
+  color: #7f1d1d;
+}
+
+.badge--busy,
+.badge--assigned,
+.badge--in-transit,
+.badge--dispatched {
+  background: #e0f2fe;
+  color: #1d4ed8;
+}
+
+.badge--completed {
+  background: #bbf7d0;
+  color: #166534;
+}

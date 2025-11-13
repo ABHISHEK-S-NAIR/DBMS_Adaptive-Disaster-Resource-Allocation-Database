@@ -1,0 +1,19 @@
+# Node
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Build outputs
+dist/
+build/
+
+# Env
+.env
+.env.local
+
+# OS & editor
+.DS_Store
+.vscode/
+Thumbs.db
+
+.github/

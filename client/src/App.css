@@ -1,0 +1,147 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-shell--loading {
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  width: 250px;
+  background: #0f172a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  transition: width 0.3s ease;
+}
+
+.sidebar--collapsed {
+  width: 70px;
+}
+
+.sidebar__brand {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar__link {
+  padding: 0.6rem 0.85rem;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar__link:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: #fff;
+}
+
+.sidebar__link--active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.topbar p {
+  margin: 0.2rem 0 0;
+  color: #475467;
+}
+
+.topbar__toggle {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.topbar__profile {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.topbar__profile-details {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.topbar__profile-name {
+  font-weight: 600;
+}
+
+.topbar__profile-role {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.topbar__logout {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #1e293b;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.topbar__logout:hover {
+  background: #f8fafc;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 960px) {
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 10;
+    transform: translateX(-100%);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .main-area {
+    margin-left: 0;
+  }
+}
